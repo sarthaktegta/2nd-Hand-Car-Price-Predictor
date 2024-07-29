@@ -8,6 +8,17 @@ Created on Sun Jul 28 14:18:20 2024
 import numpy as np
 import pickle
 import streamlit as st
+import os
+
+# Check if the model file exists and load it
+model_path = 'trained_model.sav'
+
+if os.path.exists(model_path):
+    with open(model_path, 'rb') as file:
+        loaded_model = pickle.load(file)
+else:
+    st.error(f"Model file not found: {model_path}")
+    loaded_model = None
 
 loaded_model = pickle.load(open('trained_model.sav', 'rb'))
 
