@@ -9,7 +9,7 @@ import numpy as np
 import pickle
 import streamlit as st
 
-loaded_model = pickle.load(open('D:/Saved Model/trained_model.sav', 'rb'))
+loaded_model = pickle.load(open('model/trained_model.sav', 'rb'))
 
 def car_predict(input_data):
     input_data_as_np = np.asarray(input_data, dtype=float)
