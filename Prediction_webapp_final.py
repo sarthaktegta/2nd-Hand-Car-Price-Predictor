@@ -8,6 +8,7 @@ Created on Sun Jul 28 14:18:20 2024
 import os
 import pickle
 import streamlit as st
+import numpy as np
 
 model_path = 'trained_model.sav'
 
