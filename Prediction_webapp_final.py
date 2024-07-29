@@ -5,22 +5,23 @@ Created on Sun Jul 28 14:18:20 2024
 @author: Sarthak Tegta
 """
 
-import numpy as np
+import os
 import pickle
 import streamlit as st
-import os
 
-# Check if the model file exists and load it
 model_path = 'trained_model.sav'
 
 if os.path.exists(model_path):
-    with open(model_path, 'rb') as file:
-        loaded_model = pickle.load(file)
+    try:
+        with open(model_path, 'rb') as file:
+            loaded_model = pickle.load(file)
+    except Exception as e:
+        st.error(f"Error loading the model: {e}")
+        loaded_model = None
 else:
     st.error(f"Model file not found: {model_path}")
     loaded_model = None
 
-loaded_model = pickle.load(open('trained_model.sav', 'rb'))
 
 def car_predict(input_data):
     input_data_as_np = np.asarray(input_data, dtype=float)
