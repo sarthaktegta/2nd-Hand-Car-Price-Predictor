@@ -71,7 +71,7 @@ def main():
         
         prediction = car_predict(input_data)
         
-    st.success(f'The predicted car price is: {prediction}')
+    st.success(f'The predicted car price is $: {prediction}')
 
 if __name__ == '__main__':
     main()
