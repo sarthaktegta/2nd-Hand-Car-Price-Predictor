@@ -11,7 +11,7 @@ import streamlit as st
 import os
 
 # Check if the model file exists and load it
-model_path = 'model/trained_model.sav'
+model_path = 'trained_model.sav'
 
 if os.path.exists(model_path):
     with open(model_path, 'rb') as file:
