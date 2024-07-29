@@ -9,6 +9,8 @@ import os
 import pickle
 import streamlit as st
 import numpy as np
+from sklearn.linear_model import LinearRegression
+
 
 model_path = 'trained_model.sav'
 
